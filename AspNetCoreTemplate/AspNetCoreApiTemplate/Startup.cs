@@ -44,7 +44,7 @@ namespace AspNetCoreApiTemplate
         {
             loggerFactory.AddApplicationInsights(app.ApplicationServices, LogLevel.Information);
 
-            ActivateMigration(app);
+            Migrate(app);
 
             if (env.IsDevelopment())
             {
@@ -59,7 +59,7 @@ namespace AspNetCoreApiTemplate
             app.UseMvc();
         }
 
-        private void ActivateMigration(IApplicationBuilder app)
+        private void Migrate(IApplicationBuilder app)
         {
             using (var scope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope())
             {
