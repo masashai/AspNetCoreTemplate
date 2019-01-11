@@ -6,45 +6,50 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using AspNetCoreTemplate.ViewModels;
 using Microsoft.Extensions.Logging;
+using AspNetCoreTemplate.Controllers.Base;
+using AspNetCoreTemplate.Services;
 
 namespace AspNetCoreTemplate.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
         private readonly ILogger _logger;
+        private readonly IHomeService _homeService;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, IHomeService homeService)
         {
             _logger = logger;
+            _homeService = homeService;
         }
         public IActionResult Index()
         {
-            _logger.LogWarning("日本語でおｋ");
+            _logger.LogWarning("Custom Log");
             return View();
         }
 
         public IActionResult About()
         {
-            ViewData["Message"] = "Your application description page.";
+            ViewData["Message"] = _homeService.GetAboutMessage();
 
             return View();
         }
 
         public IActionResult Contact()
         {
-            ViewData["Message"] = "Your contact page.";
+            ViewData["Message"] = _homeService.GetContactMessage();
 
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult ThrowError()
         {
-            return View();
+            throw new NotImplementedException();
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
+            _logger.LogError("Error Occurred");
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }

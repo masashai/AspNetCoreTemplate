@@ -23,7 +23,7 @@ namespace AspNetCoreApiTemplate.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
         {
-            _logger.LogInformation("Custom Log");
+            _logger.LogWarning("Custom Log");
             return _valuesService.Get();
         }
 
