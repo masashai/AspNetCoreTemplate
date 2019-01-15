@@ -1,13 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27703.2035
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28407.52
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetCoreTemplate", "AspNetCoreTemplate\AspNetCoreTemplate.csproj", "{11BA453A-B73B-40ED-AC76-DA385528B4B6}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetCoreApiTemplate", "AspNetCoreApiTemplate\AspNetCoreApiTemplate.csproj", "{E9F53DDE-E742-4725-BA2D-CFF99E0DA737}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReactSample", "ReactSample\ReactSample.csproj", "{BD0FF460-3C58-4405-BE3D-84F76BC7A177}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReactSample", "ReactSample\ReactSample.csproj", "{BD0FF460-3C58-4405-BE3D-84F76BC7A177}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
